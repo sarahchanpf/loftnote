@@ -14,7 +14,6 @@ const cols: { title: string; links: { href: string; label: string }[] }[] = [
   {
     title: "Loftnote",
     links: [
-      { href: "/#how-it-works", label: "How it works" },
       { href: "/about", label: "About us" },
       { href: "/trust", label: "Trust & safety" },
       { href: "/help", label: "Help center" },
@@ -31,7 +30,7 @@ const cols: { title: string; links: { href: string; label: string }[] }[] = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--color-line)] bg-white">
+    <footer className="border-t border-[var(--color-line)] bg-[var(--color-paper)]">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
@@ -50,7 +49,7 @@ export function Footer() {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-[var(--color-muted)] hover:text-[var(--color-pink)]"
+                      className="text-sm text-[var(--color-muted)] hover:text-[var(--color-ink)]"
                     >
                       {l.label}
                     </Link>

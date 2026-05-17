@@ -32,13 +32,29 @@ const u = (id: string) =>
   `https://images.unsplash.com/photo-${id}?w=800&h=800&fit=crop&crop=faces&auto=format&q=80`;
 
 const COLORS = [
-  { bg: "bg-[var(--color-pink)]", fg: "text-white" },
-  { bg: "bg-[var(--color-blue)]", fg: "text-white" },
-  { bg: "bg-[var(--color-orange)]", fg: "text-white" },
-  { bg: "bg-[var(--color-lime)]", fg: "text-[var(--color-ink)]" },
-  { bg: "bg-[var(--color-yellow)]", fg: "text-[var(--color-ink)]" },
+  { bg: "bg-[var(--color-lavender)]", fg: "text-[var(--color-lavender-deep)]" },
+  { bg: "bg-[var(--color-blush)]", fg: "text-[var(--color-blush-deep)]" },
+  { bg: "bg-[var(--color-sage)]", fg: "text-[var(--color-sage-deep)]" },
+  { bg: "bg-[var(--color-peach)]", fg: "text-[var(--color-peach-deep)]" },
+  { bg: "bg-[var(--color-butter)]", fg: "text-[var(--color-butter-deep)]" },
 ];
 const c = (i: number) => COLORS[i % COLORS.length];
+
+const GENRE_TONES: Record<string, { bg: string; fg: string }> = {
+  Jazz: { bg: "bg-[var(--color-lavender)]", fg: "text-[var(--color-lavender-deep)]" },
+  Soul: { bg: "bg-[var(--color-blush)]", fg: "text-[var(--color-blush-deep)]" },
+  Blues: { bg: "bg-[var(--color-peach)]", fg: "text-[var(--color-peach-deep)]" },
+  "R&B": { bg: "bg-[var(--color-blush)]", fg: "text-[var(--color-blush-deep)]" },
+  Pop: { bg: "bg-[var(--color-lavender)]", fg: "text-[var(--color-lavender-deep)]" },
+  Acoustic: { bg: "bg-[var(--color-sage)]", fg: "text-[var(--color-sage-deep)]" },
+  Folk: { bg: "bg-[var(--color-sage)]", fg: "text-[var(--color-sage-deep)]" },
+  Classical: { bg: "bg-[var(--color-butter)]", fg: "text-[var(--color-butter-deep)]" },
+  Latin: { bg: "bg-[var(--color-peach)]", fg: "text-[var(--color-peach-deep)]" },
+};
+
+export function genreTone(g: string): { bg: string; fg: string } {
+  return GENRE_TONES[g] ?? { bg: "bg-[var(--color-cream)]", fg: "text-[var(--color-ink)]" };
+}
 
 export const musicians: Musician[] = [
   {

@@ -3,33 +3,58 @@
 :root {
   color-scheme: light only;
 
-  --color-paper: #ffffff;
-  --color-cream: #fff8ee;
-  --color-pink-blush: #fff0f7;
-  --color-ink: #0f0f12;
-  --color-muted: #5b5b66;
-  --color-line: #ece7df;
+  /* Surfaces */
+  --color-paper: #fdfbf7;
+  --color-cream: #f5efe4;
+  --color-ink: #2a2730;
+  --color-muted: #6c6976;
+  --color-line: #ece6dc;
 
-  --color-pink: #ff3ea5;
-  --color-pink-soft: #ffd6ea;
-  --color-lime: #adff02;
-  --color-lime-soft: #e6ffb3;
-  --color-blue: #3d5afe;
-  --color-blue-soft: #dfe4ff;
-  --color-yellow: #ffe500;
-  --color-yellow-soft: #fff7a8;
-  --color-orange: #ff6b35;
-  --color-orange-soft: #ffd6c5;
+  /* Pastel palette */
+  --color-lavender: #e9e3f7;
+  --color-lavender-deep: #6b5ba6;
+  --color-blush: #fbe1da;
+  --color-blush-deep: #a05a4d;
+  --color-sage: #dee9d4;
+  --color-sage-deep: #5e7a47;
+  --color-peach: #fbe1cc;
+  --color-peach-deep: #a06438;
+  --color-butter: #faecc1;
+  --color-butter-deep: #8a7039;
+
+  /* Legacy aliases — keep names used across components but with pastel values */
+  --color-pink-blush: #fbe1da;
+  --color-pink: #a05a4d;
+  --color-pink-soft: #fbe1da;
+  --color-lime: #dee9d4;
+  --color-lime-soft: #eef3e6;
+  --color-blue: #6b5ba6;
+  --color-blue-soft: #e9e3f7;
+  --color-yellow: #faecc1;
+  --color-yellow-soft: #fbf3d8;
+  --color-orange: #fbe1cc;
+  --color-orange-soft: #fbeede;
 }
 
 @theme inline {
   --color-paper: var(--color-paper);
   --color-cream: var(--color-cream);
-  --color-pink-blush: var(--color-pink-blush);
   --color-ink: var(--color-ink);
   --color-muted: var(--color-muted);
   --color-line: var(--color-line);
 
+  --color-lavender: var(--color-lavender);
+  --color-lavender-deep: var(--color-lavender-deep);
+  --color-blush: var(--color-blush);
+  --color-blush-deep: var(--color-blush-deep);
+  --color-sage: var(--color-sage);
+  --color-sage-deep: var(--color-sage-deep);
+  --color-peach: var(--color-peach);
+  --color-peach-deep: var(--color-peach-deep);
+  --color-butter: var(--color-butter);
+  --color-butter-deep: var(--color-butter-deep);
+
+  --color-pink-blush: var(--color-pink-blush);
   --color-pink: var(--color-pink);
   --color-pink-soft: var(--color-pink-soft);
   --color-lime: var(--color-lime);
@@ -55,8 +80,8 @@
 }
 
 html, body {
-  background: #ffffff;
-  color: #0f0f12;
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 body {
@@ -65,8 +90,8 @@ body {
 }
 
 ::selection {
-  background: #ffe500;
-  color: #0f0f12;
+  background: var(--color-butter);
+  color: var(--color-ink);
 }
 
 .font-display {
@@ -75,7 +100,10 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid #3d5afe;
+  outline: 2px solid var(--color-lavender-deep);
   outline-offset: 2px;
   border-radius: 0.5rem;
 }
+
+.scrollbar-hidden::-webkit-scrollbar { display: none; }
+.scrollbar-hidden { scrollbar-width: none; -ms-overflow-style: none; }
